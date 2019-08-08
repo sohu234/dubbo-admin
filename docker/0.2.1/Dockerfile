@@ -15,6 +15,7 @@
 
 FROM openjdk:8-jdk
 RUN mkdir /source && wget https://github.com/sohu234/dubbo-admin/archive/nacos_support.zip && unzip nacos_support.zip -d /source
+RUN mv /source/dubbo-admin-nacos_support /source/dubbo-admin-0.2.1
 WORKDIR /source/dubbo-admin-0.2.1
 RUN ./mvnw clean package -Dmaven.test.skip=true
 
